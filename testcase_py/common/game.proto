@@ -1,0 +1,19 @@
+syntax="proto2";
+package Proto;
+enum GameErrcode{
+
+GEC_OK=0;
+GEC_Err=1;
+}
+
+message C2S_AcctLogin
+{
+    optional string acct=1;
+    optional uint32 zone=2;
+}
+message  S2C_AcctLogin
+{
+    optional GameErrcode code=1;
+    //repeated playerBaseInfo players=3;
+    optional uint32 isTempAcct=3;
+}
